@@ -9,7 +9,8 @@
     "lint": "eslint . --fix",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "preview": "vite preview",
-    "print-lint-rules": "eslint --print-config ./src/main.tsx > eslintRules.ts"
+    "print-lint-rules": "eslint --print-config ./src/main.tsx > eslintRules.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -25,7 +26,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
-    "husky": "^9.1.7",
+    "husky": "^8.0.0",
     "prettier": "^3.4.2",
     "prettier-plugin-jsdoc": "^1.3.2",
     "prettier-plugin-packagejson": "^2.5.8",
