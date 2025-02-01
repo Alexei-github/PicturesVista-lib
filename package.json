@@ -7,10 +7,11 @@
     "build": "tsc -b && vite build",
     "dev": "vite",
     "lint": "eslint . --fix",
+    "pre-commit": "eslint . && prettier .",
+    "prepare": "husky install",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "preview": "vite preview",
-    "print-lint-rules": "eslint --print-config ./src/main.tsx > eslintRules.ts",
-    "prepare": "husky install"
+    "print-lint-rules": "eslint --print-config ./src/main.tsx > eslintRules.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
