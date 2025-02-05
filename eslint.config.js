@@ -1,13 +1,24 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import storybook from 'eslint-plugin-storybook';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config([
   {
-    ignores: ['dist', 'node_modules'],
+    ignores: ['dist', 'node_modules', '!.storybook'],
+  },
+  {
+    files: ['**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+    extends: [...storybook.configs['flat/recommended']],
+    rules: {
+      // example of overriding a rule
+      'storybook/hierarchy-separator': 'error',
+      // example of disabling a rule
+      'storybook/default-exports': 'error',
+    },
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
@@ -19,6 +30,7 @@ export default tseslint.config([
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      storybook: storybook,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
