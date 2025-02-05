@@ -8,7 +8,7 @@
 // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 // test: Adding missing tests or correcting existing tests
 
-export default {
+const commitlintConfig = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'body-leading-blank': [1, 'always'],
@@ -44,3 +44,5 @@ export default {
     ],
   },
 };
+
+export default commitlintConfig;
