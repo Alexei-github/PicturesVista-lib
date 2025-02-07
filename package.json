@@ -10,11 +10,12 @@
     "lint": "eslint . --fix",
     "prepare": "husky install",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "prettier:fixImports": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --config .prettier.fixImports.js",
+    "prettier:fixImports": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --config prettier.fixImports.js",
     "preview": "vite preview",
     "print-lint-rules": "eslint --print-config ./src/main.tsx > eslintRules.ts",
     "storybook": "storybook dev -p 6006"
   },
+  "prettier": "./prettier.config.js",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

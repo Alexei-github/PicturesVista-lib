@@ -7,7 +7,7 @@ import globals from 'globals';
 import React from 'react';
 import tseslint from 'typescript-eslint';
 
-const hello = 'hello';
+const hi = 'test';
 
 export default tseslint.config([
   {
@@ -29,6 +29,7 @@ export default tseslint.config([
       js.configs.recommended,
       ...tseslint.configs.recommended,
       // eslintPluginImport.flatConfigs.recommended,
+      // 'plugin:prettier/recommended',
     ],
     languageOptions: {
       ecmaVersion: 2020,
@@ -38,6 +39,8 @@ export default tseslint.config([
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       storybook: storybook,
+      // prettier: true,
+      // 'eslint-plugin-prettier': true,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -46,6 +49,7 @@ export default tseslint.config([
         'warn',
         { args: 'after-used', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      // 'prettier/prettier': 'error',
     },
   },
   eslintConfigPrettier,

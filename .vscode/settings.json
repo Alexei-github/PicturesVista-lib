@@ -1,5 +1,7 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "prettier.configPath": "./prettier.config.js",
+
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.rulers": [80],
@@ -13,6 +15,6 @@
   "eslint.useFlatConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+    // "source.organizeImports": "explicit"
   }
 }
-// "source.organizeImports": "explicit"
