@@ -4,10 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import storybook from 'eslint-plugin-storybook';
 import globals from 'globals';
-import React from 'react';
 import tseslint from 'typescript-eslint';
-
-const hi = 'test';
 
 export default tseslint.config([
   {
