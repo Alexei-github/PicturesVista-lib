@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginImport from 'eslint-plugin-import';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import storybook from 'eslint-plugin-storybook';
@@ -31,10 +32,12 @@ export default tseslint.config([
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       storybook: storybook,
+      import: eslintPluginImport,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'import/no-anonymous-default-export': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'warn',
         { args: 'after-used', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },

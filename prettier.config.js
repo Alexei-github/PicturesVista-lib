@@ -1,4 +1,4 @@
-export default {
+const prettierBaseConfig = {
   $schema: 'https://json.schemastore.org/prettierrc',
   plugins: [
     'prettier-plugin-jsdoc',
@@ -14,3 +14,5 @@ export default {
   bracketSpacing: true,
   tabWidth: 2,
 };
+
+export default prettierBaseConfig;

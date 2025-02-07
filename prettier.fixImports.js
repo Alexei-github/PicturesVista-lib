@@ -1,5 +1,8 @@
 import prettierBaseConfig from './prettier.config.js';
-export default {
+
+const prettierCofigFix = {
   ...prettierBaseConfig,
   organizeImportsSkipDestructiveCodeActions: false,
 };
+
+export default prettierCofigFix;
