@@ -4,7 +4,10 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import storybook from 'eslint-plugin-storybook';
 import globals from 'globals';
+import React from 'react';
 import tseslint from 'typescript-eslint';
+
+const hello = 'hello';
 
 export default tseslint.config([
   {
@@ -22,7 +25,11 @@ export default tseslint.config([
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      // eslintPluginImport.flatConfigs.recommended,
+    ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -35,9 +42,50 @@ export default tseslint.config([
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      semi: ['warn', 'always'],
-      // "unused-vars": "on",
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { args: 'after-used', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
     },
   },
   eslintConfigPrettier,
 ]);
+
+// const importRules = eslintPluginImport.configs.recommended.rules;
+// const importRules = {
+// 'import/no-unused-modules': [2],
+// 'import/no-unresolved': [2],
+// 'import/order': [
+//   'error',
+//   {
+//     'newlines-between': 'always',
+//     groups: ['builtin', 'external', 'internal'],
+//     pathGroups: [
+//       {
+//         pattern: '@/**',
+//         group: 'external',
+//         position: 'before',
+//       },
+//     ],
+//     pathGroupsExcludedImportTypes: ['react'],
+//     'newlines-between': 'off',
+//     alphabetize: {
+//       order: 'asc',
+//       caseInsensitive: true,
+//     },
+//   },
+// ],
+// };
+//   'import/no-unused-modules': ['error'],
+//   // "import/no-unresolved": ["error"],
+//   'import/named': ['error'],
+//   'import/namespace': ['error'],
+//   'import/default': ['error'],
+//   'import/export': ['error'],
+//   'import/no-named-as-default': ['error'],
+//   'import/no-named-as-default-member': ['error'],
+//   'import/no-deprecated': ['error'],
+//   'import/no-extraneous-dependencies': ['error'],
+//   'import/no-mutable-exports': ['error'],
+//   'import/unambiguous': ['error'],
+// };
