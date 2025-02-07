@@ -25,12 +25,7 @@ export default tseslint.config([
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-      // eslintPluginImport.flatConfigs.recommended,
-      // 'plugin:prettier/recommended',
-    ],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -39,8 +34,6 @@ export default tseslint.config([
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       storybook: storybook,
-      // prettier: true,
-      // 'eslint-plugin-prettier': true,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -49,7 +42,6 @@ export default tseslint.config([
         'warn',
         { args: 'after-used', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
-      // 'prettier/prettier': 'error',
     },
   },
   eslintConfigPrettier,

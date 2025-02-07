@@ -8,6 +8,7 @@
     "build-storybook": "storybook build",
     "dev": "cross-env NODE_OPTIONS='--inspect' vite",
     "lint": "eslint . --fix",
+    "lint-prepush": "eslint . --fix --max-warnings=0",
     "prepare": "husky install",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "prettier:fixImports": "prettier --write \"**/*.{js,jsx,ts,tsx}\" --config prettier.fixImports.js",
